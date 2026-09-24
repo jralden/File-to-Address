@@ -1,0 +1,17 @@
+{
+  "data-flow" : {
+    "destination" : false
+  },
+  "information-source" : false,
+  "private" : false,
+  "project" : {
+    "id" : "78041DC4-E4AD-4F01-AF49-2C89E9B5285D"
+  },
+  "project-type" : "code-development",
+  "scale" : "product",
+  "schema-version" : "1.0.0",
+  "status" : {
+    "activity" : "active"
+  },
+  "vault-anchor" : false
+}

@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "project": {
+    "uid": "pc17fc1af",
+    "name": "File-to-Address",
+    "description": "Computes the address of a selected file in the file system and writes it at the cursor"
+  },
+  "milestones": [
+    {
+      "uid": "mc896b6b6",
+      "title": "Application Defined",
+      "goal": "The application is defined.",
+      "phases": [
+        {
+          "uid": "h7c45d3dd",
+          "title": "Define the Application",
+          "goal": "Decide what the application is.",
+          "depends_on": [],
+          "steps": [
+            {
+              "uid": "s0793d163",
+              "title": "Who it is for",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "Who uses it, and what can they do with it that they cannot do today?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            },
+            {
+              "uid": "s280fa616",
+              "title": "Platform and stack",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "What does it run on, and in which language and main frameworks is it written?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            },
+            {
+              "uid": "s4f03dd44",
+              "title": "Data and state",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "What data does it keep, where is it stored, and who owns it?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            },
+            {
+              "uid": "s19d58abe",
+              "title": "Interfaces",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "How do people and other software reach it (UI, CLI, API, files), and what does it depend on?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            },
+            {
+              "uid": "sdb6a551f",
+              "title": "Delivery",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "How is it built, tested, shipped and installed, and who runs it?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            },
+            {
+              "uid": "s1508269a",
+              "title": "Security and privacy",
+              "type": "decision",
+              "state": "pending",
+              "specified": false,
+              "intent": "What must it protect, from whom, and which credentials or personal data does it touch?",
+              "depends_on": [],
+              "checks": [],
+              "steps": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
