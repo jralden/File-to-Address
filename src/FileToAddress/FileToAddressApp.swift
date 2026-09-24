@@ -1,6 +1,5 @@
 import AppKit
 import Carbon.HIToolbox
-import ServiceManagement
 import SwiftUI
 
 @main
@@ -28,10 +27,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var hotKey: HotKey?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
-        hotKey = HotKey(keyCode: kVK_ANSI_V, modifiers: controlKey | optionKey | cmdKey) {
-            Controller.shared.insertSelection()
+        KeepAlive.resolveDuplicates { [self] in
+            // Registered only once other copies have quit, since they hold the hot key.
+            hotKey = HotKey(keyCode: kVK_ANSI_V, modifiers: controlKey | optionKey | cmdKey) {
+                Controller.shared.insertSelection()
+            }
+            if !TextInserter.isTrusted { TextInserter.requestTrust() }
+            KeepAlive.enableByDefaultOnce()
         }
-        if !TextInserter.isTrusted { TextInserter.requestTrust() }
     }
 }
 
@@ -42,10 +45,10 @@ final class Controller: ObservableObject {
     @Published var isTrusted = TextInserter.isTrusted
 
     var launchAtLogin: Bool {
-        get { SMAppService.mainApp.status == .enabled }
+        get { KeepAlive.isEnabled }
         set {
             do {
-                if newValue { try SMAppService.mainApp.register() } else { try SMAppService.mainApp.unregister() }
+                try KeepAlive.setEnabled(newValue)
             } catch {
                 showAlert("Could not change Launch at Login", error.localizedDescription)
             }

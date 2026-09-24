@@ -27,4 +27,6 @@ swift test                      # runs the unit tests
 
 The script signs with the first Developer ID or Apple Development identity in the keychain, so permissions survive rebuilds. Set `SIGN_IDENTITY` to override it.
 
-Turn on **Launch at Login** from the menu to keep the app in the menu bar after a restart.
+## Staying running
+
+The app registers a launchd agent the first time it runs. The agent starts the app at login and relaunches it within about 10 seconds if it crashes. Choosing **Quit** from the menu stops it until the next login. Turn off **Launch at Login** in the menu to remove the agent. You can approve or remove it in System Settings › General › Login Items.
